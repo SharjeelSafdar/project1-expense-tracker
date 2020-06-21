@@ -1,0 +1,80 @@
+.Calculator {
+    height: auto;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: whitesmoke;
+    position: fixed;
+    z-index: 15;
+    visibility: hidden;
+    border: thin solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0 0 10px;
+    padding-bottom: 2px;
+}
+
+.show {
+    visibility: visible;
+}
+
+.CalcHead {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    width: auto;
+    font-size: 16px;
+    color: rgb(33, 51, 70);
+    background-color: orange;
+    padding: 5px;
+    border: thin solid whitesmoke;
+    border-radius: 5px;
+    margin: 4px;
+}
+
+.CalcHead h3 {
+    padding: 0 5px;
+    margin: 0 0 0 5px;
+}
+
+.CalcHead button {
+    cursor: pointer;
+    background-color: rgb(33, 51, 70);
+    color: white;
+    border: medium solid rgb(33, 51, 70);
+    border-radius: 50%;
+    padding: 2px 5px;
+    margin: 0;
+}
+
+.Calculator .Screen {
+    width: auto;
+    background-color: transparent;
+    color: whitesmoke;
+    font-size: 24px;
+    text-align: right;
+    border: thin solid whitesmoke;
+    border-radius: 5px;
+    padding: 3px 5px;
+    margin: 2px 4px;
+    overflow: auto;
+}
+
+.Calculator .Keypad button {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+    color: whitesmoke;
+    background-color: transparent;
+    border: thin solid whitesmoke;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.Calculator .Keypad button img {
+    width: 15px;
+    height: 15px;
+}
+
+.CalcRow {
+    margin: 0 2px;
+}

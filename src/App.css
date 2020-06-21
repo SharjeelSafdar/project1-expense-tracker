@@ -1,38 +1,368 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.8);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* CSS for Header Component */
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    background-color: orange;
+    flex: 1;
+    justify-content: flex-start;
+    margin: 0;
+    position: relative;
+    z-index: 10;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Header img {
+    width: 40px;
+    height: 50px;
+    padding: 10px 20px;
+    margin-left: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Header h1 {
+    margin: 18px 0 15px 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* CSS for Container */
+
+.container {
+    display: flex;
+    padding: 0 0 20px 0;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    background-image: url("/images/bg_image_5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.back {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+}
+
+/* CSS for left and right container */
+
+.leftContainer, .rightContainer {
+    position: relative;
+    z-index: 5;
+}
+
+/* CSS for Account Summary */
+.AccountSummary {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    justify-content: space-evenly;
+}
+
+.balance, .income, .expense {
+    width: auto;
+    height: auto;
+    margin: 40px 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.balanceImage, .incomeImage, .expenseImage{
+    margin: 0 !important;
+    width: 100px;
+    height: 100px;
+    border-radius: 50pc;
+    box-shadow: 0 0px 20px #a0a0a0;
+}
+
+.AccountSummary .balanceImage {background: rgb(64, 245, 245);}
+.AccountSummary .incomeImage {background: #2ecc71;}
+.AccountSummary .expenseImage {background: #f79287;}
+
+.AccountSummary img {
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    margin-top: 23px;
+}
+
+.AccountSummary h2 {
+    margin: 20px 0 10px 0;
+    width: auto;
+}
+
+.AccountSummary h4 {
+    margin: 0;
+    width: auto;
+}
+
+/* CSS for AddTransaction Component */
+
+.NewTransaction {
+    margin-top: 20px;
+}
+
+.NewTransaction fieldset {
+    border-color: whitesmoke;
+}
+
+.date, .time, .amount, .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.formLine2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.NewTransaction input {
+    display: block;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 2px 2px 10px #a0a0a0;
+}
+
+.NewTransaction .time {
+    margin: 0 10px;
+}
+
+.NewTransaction .time input {
+    width: 173px;
+}
+
+.NewTransaction .amount input {
+    width: 100px;
+    padding: 12.5px 10px !important;
+}
+
+.NewTransaction .formLine3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.NewTransaction .add-btn {
+    cursor: pointer;
+    background-color: #2ba8be;
+    box-shadow: var(--box-shadow);
+    color: #fff;
+    border: 0;
+    /* display: flex; */
+    font-size: 16px;
+    margin: 10px 5px 10px 0;
+    padding: 10px;
+    width: 47.5%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+}
+
+.NewTransaction .calc-btn {
+    cursor: pointer;
+    background-color: rgb(106, 214, 106);
+    box-shadow: var(--box-shadow);
+    color: white;
+    border: 0;
+    font-size: 16px;
+    margin: 10px 0 10px 5px;
+    padding: 10px;
+    width: 47.5% !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+}
+
+.NewTransaction p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.NewTransaction img {
+    width: 23px;
+    height: 23px;
+    padding-right: 10px;
+}
+
+/* CSS for TransactionHistory */
+
+.noTransaction {
+    height: 492px;
+    width: 512px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.noTransaction img {
+    width: 50px;
+    height: 50px;
+}
+
+.TransactionHistory {
+    display: flex;
+    flex-direction: column;
+    height: 492px;
+    width: 500px;
+    margin-top: 30px;
+    border-color: whitesmoke;
+}
+
+.TransactionHistory ul {
+    list-style: none;
+    padding: 0;
+    height: 440px;
+    overflow-y: auto;
+    margin: 0 0 16px 0;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: whitesmoke;
+    border-radius: 3px;
+}
+
+.transactionItem {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+    width: 450px;
+    font-size: 16px;
+    padding: 5px;
+    box-shadow: 0 10px 20px #707070;
+    margin: 10px 20px !important;
+    border: thin solid whitesmoke;
+}
+
+.transactionItem:first-of-type {
+    margin: 26px 20px 10px 20px !important;
+}
+
+.plus:hover {
+    border: thin solid #2ecc71 !important;
+    color: black !important;
+    background-color: white !important;
+}
+
+.minus:hover {
+    border: thin solid #f86a5b !important;
+    color: black !important;
+    background-color: white !important;
+}
+
+.trans-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 15px; */
+}
+
+.trans-descrip, .trans-date {
+    margin-left: 15px;
+}
+
+.trans-amount span {
+    position: relative;
+    right: -35px;
+}
+
+.del-btn {
+    cursor: pointer;
+    position: relative;
+    top: -20px;
+    right: -17px;
+    background-color: transparent;
+    color: transparent;
+    border-style: solid;
+    border-color: transparent;
+    border-width: medium;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    /* margin-left: 20px; */
+}
+
+.transactionItem:hover .del-btn {
+    background-color: white;
+    color: black;
+    border: thin solid #f86a5b;
+}
+
+.edit-btn {
+    cursor: pointer;
+    position: relative;
+    top: -20px;
+    right: -15px;
+    background-color: transparent;
+    color: transparent;
+    border-style: solid;
+    border-color: transparent;
+    border-width: medium;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    visibility: hidden;
+}
+
+.edit-btn img {
+    height: 10px;
+    width: 10px;
+}
+
+.transactionItem:hover .edit-btn {
+    background-color: white;
+    color: black;
+    border: thin solid #2ecc71;
+    visibility: visible;
+}
+
+/* CSS for Footer Component */
+
+.Footer {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    padding: 10px 0;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.Footer a {
+    color: green;
 }
