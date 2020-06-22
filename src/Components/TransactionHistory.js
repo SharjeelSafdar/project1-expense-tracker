@@ -10,13 +10,17 @@ export const TransactionHistory = () => {
             <fieldset className="TransactionHistory">
                 <legend>Transaction History</legend>
                 {
-                    transactions.length ? 
+                    // If there is atleast one transaction
+                    transactions.length 
+                    ? 
+                        // Reder it as a list.
                         <ul>
                             {transactions.map( transaction => 
                                 <Transaction key={transaction.id} transaction={transaction}/>
                             )}
                         </ul>
                     :
+                        // Else if the transactions list is empty.
                         <div className="noTransaction">
                             <img src="/images/add2.png" alt=""/>
                             <h4>Add transactions to see history.</h4>

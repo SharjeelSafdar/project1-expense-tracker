@@ -1,23 +1,24 @@
 export const reducerFunc = (state, action) => {
     switch (action.type) {
         case 'ADD_TRANSACTION':
-            console.log(state.transactions)
             let newState = {
                 ...state,
                 transactions: [action.payload, ...state.transactions]
             };
-            console.log(newState.transactions)
+            // Sort the transactions in chronological order: resent transactions first.
             newState.transactions.sort((a,b) => a.date.getTime() - b.date.getTime());
-            console.log(newState.transactions)
+
             return newState; 
         case 'DELETE_TRANSACTION':
             return {
                 ...state,
+                // Copy all the transactions except the one with a particular id.
                 transactions: state.transactions.filter(transaction => transaction.id !== action.payload)
             }
         case 'EDIT_TRANSACTION':
             return {
                 ...state,
+                // Copy all the transactions except the one with a particular id.
                 transactions: state.transactions.filter(transaction => transaction.id !== action.payload)
             }
         default:

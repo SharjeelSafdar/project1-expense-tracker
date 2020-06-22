@@ -7,14 +7,16 @@ import { AccountSummary } from './Components/AccountSummary';
 import { NewTransaction } from './Components/NewTransaction';
 import { TransactionHistory } from './Components/TransactionHistory';
 import { Footer } from './Components/Footer';
-import { GlobalProvider } from './Context/GlobalProvider';
 import { Calculator } from './Components/Calculator/Calculator';
+// Import Provider for GolbalContext.
+import { GlobalProvider } from './Context/GlobalProvider';
 
 function App() {
 	return (
 		<div>
 			<Header />
 				<div className="container">
+				{/* The following div is to provide a partially transparent background. */}
 				<div className="back">
 					<GlobalProvider>
 						<AccountSummary />

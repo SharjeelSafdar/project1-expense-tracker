@@ -9,6 +9,8 @@ export const Calculator = () => {
     const { showCalculator } = useContext(GlobalContext);
 
     return (
+        // Relevent CSS properties will be applied to the calculator
+        // based on the 'showCaclculator' state value (true/false).
         <div className={`Calculator ${showCalculator ? 'show' : 'hide'}`}>
             <CalcHead />
             <Screen />

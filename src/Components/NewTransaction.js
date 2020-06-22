@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../Context/GlobalProvider';
 
 export const NewTransaction = () => {
+    // Extract the states from the GlobalContext to hold the contents of input boxes.
     const { addTransaction, 
             description, setDescription,
             date, setDate,
@@ -9,10 +10,12 @@ export const NewTransaction = () => {
             amount, setAmount,
             setShowCalculator } = useContext(GlobalContext)
     
+    // This function will run when the 'Add Transaction' button will be pressed.
     const submit = (e) => {
+        // Prevents the form element from running its own routine.
+        // This allows us to run our own functionality when the form is submitted.
         e.preventDefault();
-        if (!description || !date || !amount)
-            return;
+
         // Make a new transaction object from the data given by the user. 
         const newTransaction = {
             id: Math.round(Math.random()*10000000),
@@ -86,6 +89,7 @@ export const NewTransaction = () => {
 
                 {/* Show Calculator Button */}
                 <div className="calc-btn">
+                    {/* Calculator's visibility is set to true when it is pressed. */}
                     <button onClick={() => setShowCalculator(true)}>
                         <img src="/images/calculator.png" alt="" align="top" />
                         Open Calculator

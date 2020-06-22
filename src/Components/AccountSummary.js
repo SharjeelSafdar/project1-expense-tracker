@@ -2,11 +2,16 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../Context/GlobalProvider'
 
 export const AccountSummary = () => {
+    // 'transactions' array holds all the transactions entered by the user.
     const { transactions } = useContext(GlobalContext);
+    // Extract transaction amounts.
     const amounts = transactions.map( transaction => transaction.amount );
+    // Sum of all amounts to calculate the current balance.
     const total = amounts.reduce( (acc, amount) => acc += amount, 0 );
+    // Sum of positive amounts only to calculate the income.
     const income = amounts.filter( item => item>0 ).reduce( (acc, amount) => acc += amount, 0 );
     const expense = total - income;
+    
     return (
         <div className="AccountSummary">
             <div className="balance">

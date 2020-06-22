@@ -1,5 +1,6 @@
 import React from 'react';
 
+// This component will be displaed at the bottom of webapp.
 export const Footer = () => {
     return (
         <div className="Footer">
