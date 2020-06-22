@@ -4,10 +4,10 @@ import { reducerFunc } from './ReducerFunc';
 const initialState = {
     transactions: [
         // Dummy Transactions
-        { id: 1, description: "Flowers", amount: -30, date: new Date("June 11, 2020 13:11")},
-        { id: 2, description: "Salary", amount: 300, date: new Date("June 12, 2020 13:11")},
-        { id: 3, description: "Belt", amount: -50, date: new Date("June 13, 2020 13:11")},
-        { id: 4, description: "Payment", amount: 100, date: new Date("June 14, 2020 13:11")},
+        // { id: 1, description: "Flowers", amount: -30, date: new Date("June 11, 2020 13:11")},
+        // { id: 2, description: "Salary", amount: 300, date: new Date("June 12, 2020 13:11")},
+        // { id: 3, description: "Belt", amount: -50, date: new Date("June 13, 2020 13:11")},
+        // { id: 4, description: "Payment", amount: 100, date: new Date("June 14, 2020 13:11")},
     ]
 };
 
