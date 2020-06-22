@@ -5,12 +5,12 @@ export const Keypad = () => {
     const { calcScreen, setCalcScreen } = useContext(GlobalContext)
     const setScreen = (key) => {
         // If an error has occured clear the screen first
-        setCalcScreen(calcScreen === 'error' 
-            ? "0" 
+        let temp = calcScreen === 'error' 
+            ? "" 
             // Else if screen has a zero only, remove it.
             : calcScreen === '0'
                 ? ''
-                : calcScreen);
+                : calcScreen;
         switch (key) {
             case '1':
             case '2':
@@ -29,30 +29,31 @@ export const Keypad = () => {
             case '/':
             case '(':
             case ')':
-                setCalcScreen(calcScreen+key);
+                temp += key;
                 break;
             case 'C':
-                setCalcScreen("0");
+                temp = '0';
                 break;
             case 'CE':
-                setCalcScreen(calcScreen.length > 1 ? calcScreen.slice(0,-1)
-                                                    : '0');
+                temp = calcScreen.length > 1    ? temp.slice(0,-1)
+                                                : '0';
                 break;
             case '=':
-                var checkResult = calcScreen.includes('--') 
-                    ? calcScreen.replace('--','+')
-                    : calcScreen;
+                temp = temp.includes('--') 
+                    ? temp.replace('--','+')
+                    : temp;
 
                 try {
                     // eslint-disable-next-line
-                    setCalcScreen( (eval(checkResult) || "0" ) + "" )
+                    temp = (eval(temp) || "0" ) + "";
                 } catch (e) {
-                    setCalcScreen("error")
+                    temp = "error";
                 }
                 break;
             default:
                 break;
         }
+        setCalcScreen(temp);
     };
     return (
         <div className="Keypad">

@@ -7,7 +7,7 @@ import { Keypad } from './Keypad';
 
 export const Calculator = () => {
     const { showCalculator } = useContext(GlobalContext);
-    console.log(showCalculator);
+
     return (
         <div className={`Calculator ${showCalculator ? 'show' : 'hide'}`}>
             <CalcHead />

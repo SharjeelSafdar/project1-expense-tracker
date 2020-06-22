@@ -1,8 +1,7 @@
 body {
     margin: 0;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
 }
 
 /* CSS for Header Component */
@@ -26,40 +25,35 @@ body {
 }
 
 .Header h1 {
+    color: rgb(33, 51, 70);
     margin: 18px 0 15px 0;
 }
 
 /* CSS for Container */
 
 .container {
-    display: grid;
-    padding: 0 0 20px 0;
-    flex-direction: row;
-    flex: 1;
-    justify-content: space-evenly;
-    align-items: center;
-    color: white;
-    background-image: url("/images/bg_image_5.jpg");
+    background-image: url("/images/bg_image.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .back {
-    position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
-    width: 100vw;
-    height: 100vh;
-}
-
-/* CSS for left and right container */
-
-.leftContainer, .rightContainer {
-    position: relative;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
     z-index: 5;
+    padding: 0 0 20px 0;
 }
 
 /* CSS for Account Summary */
 .AccountSummary {
+    width: 350px;
+    margin: 30px 0;
     display: flex;
     flex-direction: row;
     flex: 2;
@@ -67,13 +61,13 @@ body {
 }
 
 .balance, .income, .expense {
-    width: auto;
+    width: 100px;
     height: auto;
-    margin: 40px 30px 20px;
+    margin: 0;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center !important;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -108,99 +102,60 @@ body {
 
 /* CSS for AddTransaction Component */
 
-.NewTransaction {
-    margin-top: 20px;
-}
-
 .NewTransaction fieldset {
+    border: thin solid whitesmoke;
     border-color: whitesmoke;
-}
-
-.date, .time, .amount, .description {
+    width: 350px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
-.formLine2 {
+.description, .date, .time, .amount {
+    width: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 10px;
+    justify-content: space-between;
+    font-size: 16px;
+    padding: 5px;
+    margin: 5px 0;
+    border: thin solid whitesmoke;
+    box-shadow: 0 0 5px;
+}
+
+.amount input {
+    height: 20px;
 }
 
 .NewTransaction input {
-    display: block;
-    border: 1px solid #dedede;
-    border-radius: 2px;
-    font-size: 16px;
-    padding: 10px;
-    margin: 5px 0;
-    box-shadow: 2px 2px 10px #a0a0a0;
+    width: 200px;
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: thin solid gray;
+    padding: 2px 5px;
 }
 
-.NewTransaction .time {
-    margin: 0 10px;
+.add-btn, .calc-btn {
+    width: 100%;
+    margin: 0;
 }
 
-.NewTransaction .time input {
-    width: 173px;
-}
-
-.NewTransaction .amount input {
-    width: 100px;
-    padding: 12.5px 10px !important;
-}
-
-.NewTransaction .formLine3 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.NewTransaction .add-btn {
+.NewTransaction button {
+    width: 100%;
     cursor: pointer;
-    background-color: #2ba8be;
     box-shadow: var(--box-shadow);
     color: #fff;
     border: 0;
-    /* display: flex; */
     font-size: 16px;
-    margin: 10px 5px 10px 0;
-    padding: 10px;
-    width: 47.5%;
-    align-items: center;
-    justify-content: center;
+    padding: 5px;
+    margin: 5px 0;
     text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    justify-content: center;
 }
 
-.NewTransaction .calc-btn {
-    cursor: pointer;
-    background-color: rgb(106, 214, 106);
-    box-shadow: var(--box-shadow);
-    color: white;
-    border: 0;
-    font-size: 16px;
-    margin: 10px 0 10px 5px;
-    padding: 10px;
-    width: 47.5% !important;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    justify-content: center;
-}
-
-.NewTransaction p {
-    margin: 0;
-    font-size: 12px;
-}
+.NewTransaction .add-btn button {background-color: #2ba8be;}
+.NewTransaction .calc-btn button {background-color: rgb(106, 214, 106);}
 
 .NewTransaction img {
     width: 23px;
@@ -208,11 +163,17 @@ body {
     padding-right: 10px;
 }
 
+.NewTransaction p {
+    margin: 0;
+    font-size: 12px;
+    text-align: left;
+}
+
 /* CSS for TransactionHistory */
 
 .noTransaction {
-    height: 492px;
-    width: 512px;
+    height: 300px;
+    width: 350px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -229,8 +190,8 @@ body {
 .TransactionHistory {
     display: flex;
     flex-direction: column;
-    height: 492px;
-    width: 500px;
+    height: 300px;
+    width: 350px;
     margin-top: 30px;
     border-color: whitesmoke;
 }
@@ -238,8 +199,9 @@ body {
 .TransactionHistory ul {
     list-style: none;
     padding: 0;
-    height: 440px;
+    height: 280px;
     overflow-y: auto;
+    overflow-x: hidden;
     margin: 0 0 16px 0;
 }
 ::-webkit-scrollbar {
@@ -251,34 +213,30 @@ body {
 }
 
 .transactionItem {
-    background-color: white;
-    color: black;
+    background-color: transparent;
+    color: whitesmoke;
     display: flex;
     flex-direction: row;
     flex: 1;
     justify-content: space-between;
-    width: 450px;
+    width: 310px;
     font-size: 16px;
     padding: 5px;
-    box-shadow: 0 10px 20px #707070;
-    margin: 10px 20px !important;
+    box-shadow: 0 0 5px;
+    margin: 10px 15px !important;
     border: thin solid whitesmoke;
 }
 
 .transactionItem:first-of-type {
-    margin: 26px 20px 10px 20px !important;
+    margin: 26px 15px 10px !important;
 }
 
 .plus:hover {
     border: thin solid #2ecc71 !important;
-    color: black !important;
-    background-color: white !important;
 }
 
 .minus:hover {
     border: thin solid #f86a5b !important;
-    color: black !important;
-    background-color: white !important;
 }
 
 .trans-amount {
@@ -298,6 +256,7 @@ body {
     right: -35px;
 }
 
+/* CSS for Delete Transaction Button  */
 .del-btn {
     cursor: pointer;
     position: relative;
@@ -321,6 +280,7 @@ body {
     border: thin solid #f86a5b;
 }
 
+/* CSS for Edit Transaction Button  */
 .edit-btn {
     cursor: pointer;
     position: relative;

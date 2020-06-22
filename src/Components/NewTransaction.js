@@ -9,7 +9,8 @@ export const NewTransaction = () => {
             amount, setAmount,
             setShowCalculator } = useContext(GlobalContext)
     
-    const submit = () => {
+    const submit = (e) => {
+        e.preventDefault();
         if (!description || !date || !amount)
             return;
         // Make a new transaction object from the data given by the user. 
@@ -28,9 +29,8 @@ export const NewTransaction = () => {
         <div className="NewTransaction">
             <fieldset>
                 <legend>Add New Transaction</legend>
-
-                {/* Input box for description of transaction. */}
-                <div className="formLine1">
+                <form onSubmit={submit}>
+                    {/* Input box for description of transaction. */}
                     <div className="description">
                         <label htmlFor="description">Description<sup>*</sup></label>
                         <input  id="description" 
@@ -41,9 +41,7 @@ export const NewTransaction = () => {
                                 required
                                 />
                     </div>
-                </div>
-                
-                <div className="formLine2">
+                    
                     {/* Input field for Date. */}
                     <div className="date">
                         <label htmlFor="date">Date<sup>*</sup></label>
@@ -76,28 +74,25 @@ export const NewTransaction = () => {
                                 required
                                 />
                     </div>
-                </div>
-                <br />
 
-                {/* Buttons */}
-                <div className="formLine3">
-                    <button className="add-btn"
-                            onClick={() => submit()}
-                    >
-                        <img src="/images/add.png" alt="" />
-                        <div>Add Transaction</div>
-                    </button>
-                    <button className="calc-btn"
-                            onClick={() => setShowCalculator(true)}
-                    >
-                        <img src="/images/calculator.png" alt="" />
-                        <div>Open Calculator</div>
+                    {/* Add Transaction Button */}
+                    <div className="add-btn">
+                        <button>
+                            <img src="/images/add.png" alt="" align="top" />
+                            Add Transaction
+                        </button>
+                    </div>
+                </form>
+
+                {/* Show Calculator Button */}
+                <div className="calc-btn">
+                    <button onClick={() => setShowCalculator(true)}>
+                        <img src="/images/calculator.png" alt="" align="top" />
+                        Open Calculator
                     </button>
                 </div>
-                <p>
-                    * Required field
-                    ** Enter positive amount for income and negative amount for expenses.
-                </p>
+                <p>* Required field</p>
+                <p>** Enter positive amount for income and negative amount for expenses.</p>
             </fieldset>
         </div>
     );

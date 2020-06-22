@@ -15,17 +15,14 @@ function App() {
 		<div>
 			<Header />
 				<div className="container">
-					<div className="back"></div>
+				<div className="back">
 					<GlobalProvider>
-						<div className="leftContainer">
-							<AccountSummary />
-							<NewTransaction />
-						</div>
-						<div className="rightContainer">
-							<TransactionHistory />
-						</div>
+						<AccountSummary />
+						<NewTransaction />
+						<TransactionHistory />
 						<Calculator />
 					</GlobalProvider>
+				</div>
 				</div>
 			<Footer />
 		</div>
