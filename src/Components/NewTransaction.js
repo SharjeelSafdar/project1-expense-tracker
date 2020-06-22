@@ -20,7 +20,7 @@ export const NewTransaction = () => {
         const newTransaction = {
             id: Math.round(Math.random()*10000000),
             description: description,
-            amount: +amount,
+            amount: (+amount).toFixed(2),
             date: new Date(date+' '+time)
         };
         addTransaction(newTransaction);
