@@ -193,7 +193,7 @@ body {
     height: 300px;
     width: 300px;
     margin-top: 30px;
-    border-color: whitesmoke;
+    border: thin solid whitesmoke;
 }
 
 .TransactionHistory ul {
