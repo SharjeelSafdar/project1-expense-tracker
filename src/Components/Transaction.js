@@ -22,7 +22,7 @@ export const Transaction = ({transaction}) => {
                 side of each list item, i.e., amount, edit and delete buttons. */}
             <span className="trans-amount">
                 <span>
-                    {`${amount_sign}$${Math.abs(transaction.amount)}`}
+                    {`${amount_sign}$${Math.abs(transaction.amount.toFixed(2))}`}
                 </span>
                 <button className="edit-btn"
                         onClick={() => editTransaction(transaction)}
