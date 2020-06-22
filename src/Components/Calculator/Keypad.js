@@ -2,10 +2,7 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../../Context/GlobalProvider';
 
 export const Keypad = () => {
-    // calcScreen state holds the contents of calculator's screen.
     const { calcScreen, setCalcScreen } = useContext(GlobalContext);
-
-    // Function to evaluate what to display on the screen after each button press event.
     const setScreen = (key) => {
         // If an error has occured clear the screen first
         let temp = calcScreen === 'error' 
@@ -32,15 +29,12 @@ export const Keypad = () => {
             case '/':
             case '(':
             case ')':
-                // Just append the pressed button.
                 temp += key;
                 break;
             case 'C':
-                // Clear the screen.
                 temp = '0';
                 break;
             case 'CE':
-                // Backspace: remove the last character.
                 temp = calcScreen.length > 1    ? temp.slice(0,-1)
                                                 : '0';
                 break;
@@ -50,11 +44,9 @@ export const Keypad = () => {
                     : temp;
 
                 try {
-                    // Try to evaluate the expression in temp.
                     // eslint-disable-next-line
                     temp = (eval(temp) || "0" ) + "";
                 } catch (e) {
-                    // else display 'error'.
                     temp = "error";
                 }
                 break;
