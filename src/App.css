@@ -79,8 +79,8 @@ body {
     box-shadow: 0 0px 20px #a0a0a0;
 }
 
-.AccountSummary .balanceImage {background: rgb(64, 245, 245);}
-.AccountSummary .incomeImage {background: #2ecc71;}
+.AccountSummary .balanceImage {background: #54d7ee;}
+.AccountSummary .incomeImage {background: rgb(106, 214, 106);}
 .AccountSummary .expenseImage {background: #f79287;}
 
 .AccountSummary img {
