@@ -6,7 +6,7 @@ export const reducerFunc = (state, action) => {
                 transactions: [action.payload, ...state.transactions]
             };
             // Sort the transactions in chronological order: resent transactions first.
-            newState.transactions.sort((a,b) => a.date.getTime() - b.date.getTime());
+            newState.transactions.sort((a,b) => b.date.getTime() - a.date.getTime());
 
             return newState; 
         case 'DELETE_TRANSACTION':
