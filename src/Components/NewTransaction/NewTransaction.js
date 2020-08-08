@@ -1,17 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 // Context
 import { GlobalContext } from '../../Context/GlobalProvider';
 // Styles
 import styles from './NewTransaction.module.css';
 
 const NewTransaction = () => {
-    // All the state to hold the inputs by the user. 
-    const [ description, setDescription ] = useState("");
-    const [ date, setDate ] = useState("");
-    const [ time, setTime ] = useState("");
-    const [ amount, setAmount ] = useState("");
     // Extract the states from the GlobalContext to hold the contents of input boxes.
     const { addTransaction, 
+            description, setDescription,
+            date, setDate,
+            time, setTime,
+            amount, setAmount,
             setShowCalculator } = useContext(GlobalContext)
     
     // This function will run when the 'Add Transaction' button will be pressed.
