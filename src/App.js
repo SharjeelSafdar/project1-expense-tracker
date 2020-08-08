@@ -1,27 +1,27 @@
 import React from 'react';
-import './App.css';
-
 // Components's Imports
-import { Header } from './Components/Header';
-import { AccountSummary } from './Components/AccountSummary';
-import { NewTransaction } from './Components/NewTransaction';
-import { TransactionHistory } from './Components/TransactionHistory';
-import { Footer } from './Components/Footer';
-import { Calculator } from './Components/Calculator/Calculator';
+import { Header, AccountSummary, NewTransaction, TransactionHistory, Calculator, Footer} 
+	from './components/components';
 // Import Provider for GolbalContext.
-import { GlobalProvider } from './Context/GlobalProvider';
+import { GlobalProvider } from './context/GlobalProvider';
+// Styles
+import styles from './App.module.css';
 
 function App() {
 	return (
-		<div>
+		<div className={styles.shadow}>
 			<Header />
-				<div className="container">
+				<div className={styles.back}>
+				<div className={styles.container}>
 				{/* The following div is to provide a partially transparent background. */}
-				<div className="back">
 					<GlobalProvider>
-						<AccountSummary />
-						<NewTransaction />
-						<TransactionHistory />
+						<div className={styles.leftContainer}>
+							<AccountSummary />
+							<NewTransaction />
+						</div>
+						<div className={styles.rightContainer}>
+							<TransactionHistory />
+						</div>
 						<Calculator />
 					</GlobalProvider>
 				</div>

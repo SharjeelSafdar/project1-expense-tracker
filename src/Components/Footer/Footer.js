@@ -1,9 +1,11 @@
 import React from 'react';
+// Styles
+import styles from './Footer.module.css';
 
 // This component will be displaed at the bottom of webapp.
-export const Footer = () => {
+const Footer = () => {
     return (
-        <div className="Footer">
+        <div className={styles.container}>
             <h2>My Expense Tracker</h2>
             <h5>Made By</h5>
             <h3>Mian Muhammad Sharjeel Safdar</h3>
@@ -18,3 +20,5 @@ export const Footer = () => {
         </div>
     );
 }
+
+export default Footer;

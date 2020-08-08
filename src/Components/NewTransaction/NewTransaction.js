@@ -1,13 +1,17 @@
-import React, { useContext } from 'react';
-import { GlobalContext } from '../Context/GlobalProvider';
+import React, { useContext, useState } from 'react';
+// Context
+import { GlobalContext } from '../../context/GlobalProvider';
+// Styles
+import styles from './NewTransaction.module.css';
 
-export const NewTransaction = () => {
+const NewTransaction = () => {
+    // All the state to hold the inputs by the user. 
+    const [ description, setDescription ] = useState("");
+    const [ date, setDate ] = useState("");
+    const [ time, setTime ] = useState("");
+    const [ amount, setAmount ] = useState("");
     // Extract the states from the GlobalContext to hold the contents of input boxes.
     const { addTransaction, 
-            description, setDescription,
-            date, setDate,
-            time, setTime,
-            amount, setAmount,
             setShowCalculator } = useContext(GlobalContext)
     
     // This function will run when the 'Add Transaction' button will be pressed.
@@ -28,16 +32,21 @@ export const NewTransaction = () => {
         setDescription(""); setDate(""); setTime(""); setAmount("");
     };
 
+    const showCalculator = (e) => {
+        e.preventDefault();
+        setShowCalculator(true);
+    }
+
     return (
-        <div className="NewTransaction">
-            <fieldset>
+            <fieldset className={styles.container}>
                 <legend>Add New Transaction</legend>
                 <form onSubmit={submit}>
                     {/* Input box for description of transaction. */}
-                    <div className="description">
+                    <div className={styles.description}>
                         <label htmlFor="description">Description<sup>*</sup></label>
                         <input  id="description" 
                                 type="text" 
+                                className={styles.input}
                                 placeholder="Describe the transaction..."
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
@@ -46,10 +55,11 @@ export const NewTransaction = () => {
                     </div>
                     
                     {/* Input field for Date. */}
-                    <div className="date">
+                    <div className={styles.date}>
                         <label htmlFor="date">Date<sup>*</sup></label>
                         <input  id="date" 
                                 type="date"
+                                className={styles.input}
                                 value={date}
                                 onChange={(e) => setDate(e.target.value)}
                                 required
@@ -57,20 +67,22 @@ export const NewTransaction = () => {
                     </div>
 
                     {/* Input field for Time. */}
-                    <div className="time">
+                    <div className={styles.time}>
                         <label htmlFor="time">Time</label>
                         <input  id="time" 
                                 type="time"
+                                className={styles.input}
                                 value={time}
                                 onChange={(e) => setTime(e.target.value)}
                         />
                     </div>
 
                     {/* Input field for Amount. */}
-                    <div className="amount">
+                    <div className={styles.amount}>
                         <label htmlFor="amount">Amount<sup>*</sup> ($)<sup>**</sup></label>
                         <input  id="amount" 
                                 type="number"
+                                className={styles.input}
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
                                 placeholder="$0"
@@ -79,25 +91,21 @@ export const NewTransaction = () => {
                     </div>
 
                     {/* Add Transaction Button */}
-                    <div className="add-btn">
-                        <button>
-                            <img src="/images/add.png" alt="" align="top" />
-                            Add Transaction
-                        </button>
-                    </div>
-                </form>
-
-                {/* Show Calculator Button */}
-                <div className="calc-btn">
-                    {/* Calculator's visibility is set to true when it is pressed. */}
-                    <button onClick={() => setShowCalculator(true)}>
+                    <button className={styles.addBtn}>
+                        <img src="/images/add.png" alt="" align="top" />
+                        Add Transaction
+                    </button>
+                    {/* Show Calculator Button */}
+                    <button className={styles.calcBtn} onClick={showCalculator}>
                         <img src="/images/calculator.png" alt="" align="top" />
                         Open Calculator
                     </button>
-                </div>
+                </form>
+
                 <p>* Required field</p>
                 <p>** Enter positive amount for income and negative amount for expenses.</p>
             </fieldset>
-        </div>
     );
 }
+
+export default NewTransaction;
