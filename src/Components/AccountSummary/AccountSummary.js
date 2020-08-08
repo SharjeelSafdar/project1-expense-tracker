@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 // Context
-import { GlobalContext } from '../../context/GlobalProvider'
+import { GlobalContext } from '../../Context/GlobalProvider'
 // Styles
 import styles from './AccountSummary.module.css';
 

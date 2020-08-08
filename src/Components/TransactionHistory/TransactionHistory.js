@@ -3,7 +3,7 @@ import cx from 'classnames';
 // Components
 import { Transaction } from '../components';
 // Context
-import { GlobalContext } from '../../context/GlobalProvider';
+import { GlobalContext } from '../../Context/GlobalProvider';
 // Styles
 import styles from './TransactionHistory.module.css';
 

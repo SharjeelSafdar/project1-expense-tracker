@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 // Context
-import { GlobalContext } from '../../context/GlobalProvider';
+import { GlobalContext } from '../../Context/GlobalProvider';
 // Styles
 import styles from './NewTransaction.module.css';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 // Components's Imports
 import { Header, AccountSummary, NewTransaction, TransactionHistory, Calculator, Footer} 
-	from './components/components';
+	from './Components/components';
 // Import Provider for GolbalContext.
-import { GlobalProvider } from './context/GlobalProvider';
+import { GlobalProvider } from './Context/GlobalProvider';
 // Styles
 import styles from './App.module.css';
 

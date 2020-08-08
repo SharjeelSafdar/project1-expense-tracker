@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import cx from 'classnames';
 // Context
-import { GlobalContext } from '../../context/GlobalProvider';
+import { GlobalContext } from '../../Context/GlobalProvider';
 // Styles
 import styles from './Calculator.module.css';
 
