@@ -11,7 +11,7 @@ const Footer = () => {
       <h3>Mian Muhammad Sharjeel Safdar</h3>
       <h4>
         <a
-          href="https://www.google.com"
+          href="https://github.com/SharjeelSafdar/project1-expense-tracker"
           target="_blank"
           rel="noopener noreferrer"
         >
